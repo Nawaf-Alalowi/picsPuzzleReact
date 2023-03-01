@@ -10,14 +10,15 @@ import SelectionGroupLayout from "../components/layout/SelectionGroupLayout";
 /**
  * Constants to designate the orientation of the puzzle
  */
-const LANDSCAPE = 'landscape';
-const PORTRAIT = 'portrait';
+const LANDSCAPE = 'إفقي';
+const PORTRAIT = 'عامودي';
 
 /**
  * List of available puzzle sizes to select from
  * @type {{sizeOption: string, name: string}[]}
  */
 const sizeList = [
+    {name: 'very Easy', sizeOption: '2x2'},
     {name: 'Easy', sizeOption: '3x4'},
     {name: 'Moderate', sizeOption: '4x5'},
     {name: 'Intermediate', sizeOption: '5x7'},
@@ -81,13 +82,13 @@ const SelectSize = () => {
     return (
         <>
             <SelectionGroupLayout
-                label="Select Layout"
+                label="تعديل الاتجاه"
                 className="md:grid-cols-1"
             >
                 <SelectionIconButton
                     onClick={changeLayout(LANDSCAPE)}
                     icon={<IoIosPhoneLandscape />}
-                    text="Orientation"
+                    text="الإتجاه"
                     active={layout === LANDSCAPE}
                 >
                     Landscape
@@ -95,7 +96,7 @@ const SelectSize = () => {
                 <SelectionIconButton
                     onClick={changeLayout(PORTRAIT)}
                     icon={<IoIosPhonePortrait />}
-                    text="Orientation"
+                    text="الإتجاه"
                     active={layout === PORTRAIT}
                 >
                     Portrait
@@ -103,7 +104,7 @@ const SelectSize = () => {
             </SelectionGroupLayout>
 
             <SelectionGroupLayout
-                label="Select Size"
+                label="تعديل الحجم"
                 className="sm:grid-cols-3"
             >
                 {sizeList.map(({name, sizeOption}) => (
@@ -125,7 +126,7 @@ const SelectSize = () => {
 
             <div className="flex flex-wrap justify-center items-center">
                 <div className="flex justify-center items-center">
-                    <ControlButton onClick={() => navigate('/')}>Go To Game</ControlButton>
+                    <ControlButton onClick={() => navigate('/')}>الذهاب للعبة</ControlButton>
                 </div>
             </div>
         </>

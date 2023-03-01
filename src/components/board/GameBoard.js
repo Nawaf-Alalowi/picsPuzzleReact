@@ -70,7 +70,7 @@ const GameBoard = () => {
                 {(!game.startTime) && (
                     // render the overlay with the "Start" button when game is not yet started
                     <BoardAction onClick={start}>
-                        Click Here to Play
+                        أضغط هنا للبدء
                         <BsPlayCircle className="text-5xl" />
                     </BoardAction>
                 )}

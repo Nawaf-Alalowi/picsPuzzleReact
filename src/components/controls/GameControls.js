@@ -27,26 +27,26 @@ const GameControls = () => {
     return (
         <div className="flex flex-col justify-between gap-2">
             <div className="flex flex-row md:flex-col gap-4 justify-between">
-                <GameInfo label="Moves" icon={<TbClick />}>{game?.moves?.length ?? 0}</GameInfo>
+                <GameInfo label="التحركات" icon={<TbClick />}>{game?.moves?.length ?? 0}</GameInfo>
                 <GameClock />
                 {game?.gameWon && (
-                    <GameInfo icon={<FaFlagCheckered />}>Congratulations</GameInfo>
+                    <GameInfo icon={<FaFlagCheckered />}>مبروك</GameInfo>
                 )}
             </div>
             <div className="flex flex-row md:flex-col gap-2">
                 {(!game?.startTime) && [
-                    <ControlButton onClick={start} key="startGame">Start Game</ControlButton>,
-                    <ControlButton onClick={pickNewImage} key="changeImage">Change Image</ControlButton>
+                    <ControlButton onClick={start} key="startGame">بدء اللعبة</ControlButton>,
+                    <ControlButton onClick={pickNewImage} key="changeImage">تغيير الصورة</ControlButton>
                 ]}
                 {(!!game?.startTime) && (!game?.gameWon) && (
                     <ControlButton onClick={togglePause}>
-                        {game.pauseTime ? 'Resume' : 'Pause'}
+                        {game.pauseTime ? 'الاستمرار' : 'إيقاف'}
                     </ControlButton>
                 )}
                 {(!!game?.startTime) && (
-                    <ControlButton onClick={pickNewImage}>New Game</ControlButton>
+                    <ControlButton onClick={pickNewImage}>لعبة الجديد</ControlButton>
                 )}
-                <ControlButton onClick={() => navigate('/select-size')}>Select Size</ControlButton>
+                <ControlButton onClick={() => navigate('/select-size')}>تحديد الحجم</ControlButton>
             </div>
         </div>
     );

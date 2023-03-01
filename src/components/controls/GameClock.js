@@ -49,7 +49,7 @@ const GameClock = () => {
     }, [game, game?.startTime, game?.pauseTime, game?.gameWon]);
 
     return (
-        <GameInfo label="time" icon={<IoMdTime />}>{clock}</GameInfo>
+        <GameInfo label="المؤقت" icon={<IoMdTime />}>{clock}</GameInfo>
     );
 }
 

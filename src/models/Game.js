@@ -8,7 +8,7 @@ class Game
     /**
      * @param {{x: number, y: number}} size - number of rows and columns of the puzzle
      */
-    constructor({size = {x: 4, y: 5}}) {
+    constructor({size = {x: 2, y: 2}}) {
         /**
          * @type {{x: number, y: number}} number of rows and columns of the puzzle
          */
